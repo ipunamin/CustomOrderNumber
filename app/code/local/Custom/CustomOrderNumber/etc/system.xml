@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<customordernumber translate="label" module="customordernumber">
+			<label>Custom Order Number</label>
+            <tab>sales</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>345</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+			<groups>
+                <customordernumber translate="label" module="customordernumber">
+					<label>Set Starting Order Number, Invoice Number, Shipment Number and Credit Memo Number</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>995</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<comment>Enter the starting order number, invoice number, shipment number and credit memo number, click Save Config to save the settings and then run 'update' to apply the new increment ID's. &lt;br/&gt;&lt;br/&gt;</comment>
+						<fields>					
+							<order translate="label">
+								<label>Enter Starting Order Number</label>
+								<frontend_type>text</frontend_type>
+								<comment>Don't set the order number lower than existing order number</comment>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</order>
+							<invoice translate="label">
+								<label>Enter Starting Invoice Number</label>
+								<comment>Don't set the invoice number lower than existing invoice number</comment>
+								<frontend_type>text</frontend_type>
+								<sort_order>20</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</invoice>
+							<shipment translate="label">
+								<label>Enter Starting Shipment Number</label>
+								<comment>Don't set the shipment number lower than existing shipment number</comment>
+								<frontend_type>text</frontend_type>
+								<sort_order>30</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</shipment>
+							<credit translate="label">
+								<label>Enter Starting Credit Memo Number</label>
+								<comment>Don't set the credit memo number lower than existing shipment number</comment>
+								<frontend_type>text</frontend_type>
+								<sort_order>40</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</credit>
+							<extra_increment translate="label">
+								<label>Increment Order Number</label>
+								<comment>By default order ID's are incremented by 1, you can set a different value here if you want to override that. For example 100,101,102... could become 100,105,110.. if you use an extra increment of 5.</comment>
+								<frontend_type>text</frontend_type>
+								<sort_order>50</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</extra_increment>
+							<disable_padding translate="label">
+								<label>Disable padding</label>
+								<comment>If you set this to Yes, the padding will not be used. For example: with padding 501 becomes 5000000001, without padding it stays as 501.</comment>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>60</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</disable_padding>
+							<disable_prefix translate="label">
+								<label>Disable prefix.</label>
+								<comment>If you set this to Yes, the prefix will not be used. For example: Order number 580 with an increment extra of 20 would go to 5100 with prefix enabled and 600 with prefix disabled.</comment>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>70</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</disable_prefix>
+							<update translate="label">
+                                <comment>Clicking this will update your increment ID's to the numbers you specified above (you have to save config first!). Blank numbers are left as they are. &lt;br/&gt; &lt;br/&gt; &lt;strong&gt;</comment>
+                                <frontend_type>select</frontend_type>
+                                <frontend_model>Custom_CustomOrderNumber_Block_Adminhtml_Update</frontend_model>
+                                <sort_order>220</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </update>
+							<override translate="label">
+								<label>I am 100% sure. Allow me to set my increment ID's below their current values (we recommend you to set this value to No)</label>
+								<comment>If any of the given numbers are lower than the values already in the database, you will see an error.</comment>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>300</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>0</show_in_store>
+							</override>
+						</fields>
+				</customordernumber>
+			</groups>
+		</customordernumber>
+	</sections>
+</config>

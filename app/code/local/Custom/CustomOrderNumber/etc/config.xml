@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<config>
+	<modules>
+		<Custom_CustomOrderNumber>
+			<version>0.3</version>
+		</Custom_CustomOrderNumber>
+	</modules>
+	
+	<global>
+		<helpers>
+			<customordernumber><class>Custom_CustomOrderNumber_Helper</class></customordernumber>
+		</helpers>
+		<models>
+            <customordernumber>
+                <class>Custom_CustomOrderNumber_Model</class>
+            </customordernumber>
+            <eav>
+				<rewrite>
+					<entity_increment_numeric>Custom_CustomOrderNumber_Model_Backend_Increment_Numeric</entity_increment_numeric>
+				</rewrite>
+			</eav>
+        </models>
+	</global>
+	
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<customordernumber>
+											<title>Custom Order Number</title>
+										</customordernumber>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<admin>
+	
+		<routers>
+			<customordernumber>
+				<use>admin</use>
+				<args>
+					<module>Custom_CustomOrderNumber</module>
+					<frontName>customordernumber</frontName>
+				</args>
+			</customordernumber>
+		 </routers>
+	</admin>
+	
+</config>
